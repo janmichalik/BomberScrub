@@ -229,7 +229,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!81 &283183734
 AudioListener:
   m_ObjectHideFlags: 0
@@ -399,12 +399,12 @@ GameObject:
   - component: {fileID: 1224348764}
   - component: {fileID: 1224348763}
   m_Layer: 0
-  m_Name: Main Camera
-  m_TagString: MainCamera
+  m_Name: PerspCamera
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!81 &1224348763
 AudioListener:
   m_ObjectHideFlags: 0
@@ -981,6 +981,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 829589aba5ab8ae46b7d6b22c9078487, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_CameraTwo: {fileID: 0}
 --- !u!1 &2101869567
 GameObject:
   m_ObjectHideFlags: 0
@@ -994,7 +995,7 @@ GameObject:
   - component: {fileID: 2101869568}
   m_Layer: 0
   m_Name: OrtoCamera
-  m_TagString: Untagged
+  m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
