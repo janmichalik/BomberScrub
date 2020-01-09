@@ -69,6 +69,7 @@ public class playerControle : MonoBehaviour
             else if (rotat.y == 90) addPosx = -3;
             else addPosx = 3;
             b2.transform.position = new Vector3(pos.x + addPosx, 1, pos.z + addPosz);
+            Destroy(b2, 5f);
         }
     }
 }
