@@ -7,7 +7,6 @@ public class map : MonoBehaviour
     //zmienne kamery
     Camera perspCamera, topCamera, ortoCamera;
     GameObject cam;
-    int whichCamera = 1;
     public Camera m_CameraTwo;
 
 
@@ -16,6 +15,8 @@ public class map : MonoBehaviour
     {
         GameObject block = Resources.Load ("Block") as GameObject;
         GameObject crate = Resources.Load("Crate") as GameObject;
+        GameObject player1 = Resources.Load("player1") as GameObject;
+        GameObject player2 = Resources.Load("player2") as GameObject;
         for (int i=1; i<17; ++i)
         {
             for(int j=1; j<9; ++j)
@@ -48,6 +49,13 @@ public class map : MonoBehaviour
                 }
             }
         }
+
+        //generowanie graczy
+        GameObject p1 = Instantiate(player1);
+        p1.transform.position = new Vector3(2, 0, 68);
+
+        GameObject p2 = Instantiate(player2);
+        p2.transform.position = new Vector3(98, 0, 2);
 
 
         // zaminicjalizowanie zmiennych kamery

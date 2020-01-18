@@ -2,9 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class playerControle : MonoBehaviour
+public class player2 : MonoBehaviour
 {
-
     public float speed = 20f;
     float frontBack;
     float leftRight;
@@ -16,9 +15,9 @@ public class playerControle : MonoBehaviour
     private void Start()
     {
         anim = gameObject.GetComponent<Animation>();
-        anim["running"].layer = 1;
-        anim["droppingBomb"].layer = 1;
-        anim["droppingBomb(1)"].layer = 2;
+        anim["run2"].layer = 1;
+        anim["bomb2"].layer = 1;
+        anim["bomb2(1)"].layer = 2;
         bomb = Resources.Load("bomb") as GameObject;
     }
     void Awake()
@@ -31,35 +30,35 @@ public class playerControle : MonoBehaviour
     void Update()
     {
         //pobranie osi
-        frontBack = Input.GetAxis("Vertical") * speed;
-        leftRight = Input.GetAxis("Horizontal") * speed;
+        frontBack = Input.GetAxis("Vertical1") * speed;
+        leftRight = Input.GetAxis("Horizontal1") * speed;
         //zmiana położenia gracza
         Vector3 playerCon = new Vector3(leftRight, 0, frontBack);
         cc.Move(playerCon * Time.deltaTime);
-        if ((Input.GetButton("Vertical") && Input.GetAxisRaw("Vertical") < 0))
+        if ((Input.GetButton("Vertical1") && Input.GetAxisRaw("Vertical1") < 0))
         {
             cc.transform.eulerAngles = new Vector3(transform.eulerAngles.x, 0, transform.eulerAngles.z);
-            anim.Play("running");
+            anim.Play("run2");
         }
-        if ((Input.GetButton("Vertical") && Input.GetAxisRaw("Vertical") > 0))
+        if ((Input.GetButton("Vertical1") && Input.GetAxisRaw("Vertical1") > 0))
         {
             cc.transform.eulerAngles = new Vector3(transform.eulerAngles.x, 180, transform.eulerAngles.z);
-            anim.Play("running");
+            anim.Play("run2");
         }
-        if (Input.GetButton("Horizontal") && Input.GetAxisRaw("Horizontal") < 0)
+        if (Input.GetButton("Horizontal1") && Input.GetAxisRaw("Horizontal1") < 0)
         {
             cc.transform.eulerAngles = new Vector3(transform.eulerAngles.x, 90, transform.eulerAngles.z);
-            anim.Play("running");
+            anim.Play("run2");
         }
-        if (Input.GetButton("Horizontal") && Input.GetAxisRaw("Horizontal") > 0)
+        if (Input.GetButton("Horizontal1") && Input.GetAxisRaw("Horizontal1") > 0)
         {
             cc.transform.eulerAngles = new Vector3(transform.eulerAngles.x, -90, transform.eulerAngles.z);
-            anim.Play("running");
+            anim.Play("run2");
         }
-        if (Input.GetButtonDown("Fire1"))
+        if (Input.GetButtonDown("Fire2"))
         {
-            anim.Play("droppingBomb(1)");
-            anim.Play("droppingBomb");
+            anim.Play("bomb2(1)");
+            anim.Play("bomb2");
             pos = cc.transform.position;
             rotat = cc.transform.eulerAngles;
             GameObject b2 = Instantiate(bomb);

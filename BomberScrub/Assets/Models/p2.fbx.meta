@@ -1,26 +1,31 @@
 fileFormatVersion: 2
-guid: fb9fd43d164bb24468acf0fcdfd0f205
+guid: c2cd4ae4ae072e0418dca1692ba76728
 ModelImporter:
   serializedVersion: 26
   internalIDToNameTable:
   - first:
       74: -3100628101864396295
-    second: droppingBomb
+    second: bomb2
   - first:
       74: 4781951162920444690
-    second: running
+    second: run2
   - first:
       74: -6788291789069941537
     second: Armature|SphereAction
   - first:
-      74: 7251968661893953683
-    second: droppingBomb(1)
+      74: -7058027051132348176
+    second: bomb2(1)
   externalObjects:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: Material.001
+    second: {fileID: 2100000, guid: 6a546f0cdd8793849ad003b4e82e5c75, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: Material.019
-    second: {fileID: 2100000, guid: 43e8028199d81f747b4aae602099af7f, type: 2}
+    second: {fileID: 2100000, guid: ad2157777ea483b41a02f1fe89fe92c5, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
@@ -49,36 +54,7 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: running
-      takeName: Armature|ArmatureAction
-      internalID: 0
-      firstFrame: 0
-      lastFrame: 13
-      wrapMode: 0
-      orientationOffsetY: 0
-      level: 0
-      cycleOffset: 0
-      loop: 0
-      hasAdditiveReferencePose: 0
-      loopTime: 0
-      loopBlend: 0
-      loopBlendOrientation: 0
-      loopBlendPositionY: 0
-      loopBlendPositionXZ: 0
-      keepOriginalOrientation: 0
-      keepOriginalPositionY: 1
-      keepOriginalPositionXZ: 0
-      heightFromFeet: 0
-      mirror: 0
-      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
-      curves: []
-      events: []
-      transformMask: []
-      maskType: 3
-      maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 0
-    - serializedVersion: 16
-      name: droppingBomb
+      name: bomb2
       takeName: Sphere|SphereAction
       internalID: 0
       firstFrame: 0
@@ -107,7 +83,36 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: droppingBomb(1)
+      name: run2
+      takeName: Armature|ArmatureAction
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 13
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: bomb2(1)
       takeName: Armature|ArmatureAction
       internalID: 0
       firstFrame: 14
