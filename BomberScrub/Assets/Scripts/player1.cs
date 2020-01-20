@@ -9,7 +9,7 @@ public class player1 : MonoBehaviour
     float leftRight;
     CharacterController cc;
     private Animation anim;
-    GameObject bomb;
+    GameObject bomb, gleam, smoke;
     public Vector3 pos, rotat;
 
     private void Start()
@@ -19,6 +19,8 @@ public class player1 : MonoBehaviour
         anim["bomb1"].layer = 1;
         anim["bomb1(1)"].layer = 2;
         bomb = Resources.Load("bomb") as GameObject;
+        gleam = Resources.Load("gleam") as GameObject;
+        smoke = Resources.Load("smoke") as GameObject;
     }
     void Awake()
     {
@@ -67,8 +69,42 @@ public class player1 : MonoBehaviour
             else if (rotat.y == 180) addPosz = 3;
             else if (rotat.y == 90) addPosx = -3;
             else addPosx = 3;
-            b2.transform.position = new Vector3(pos.x + addPosx, 1, pos.z + addPosz);
-            Destroy(b2, 5f);
+            Vector3 bombPos = new Vector3(pos.x + addPosx, 1, pos.z + addPosz);
+            b2.transform.position = bombPos;
+            StartCoroutine(bombExplosion(bombPos));
+            Destroy(b2, 6.5f);
         }
+    }
+    IEnumerator bombExplosion(Vector3 bombPos)
+    {
+        yield return new WaitForSeconds(4);
+        // 4 promienie
+        int gleamRotationY = -90;
+        for (int i = 0; i < 4; i++)
+        {
+            GameObject gleam1 = Instantiate(gleam);
+            gleam1.transform.position = bombPos;
+            gleam1.transform.eulerAngles = new Vector3(transform.eulerAngles.x, gleamRotationY, transform.eulerAngles.z);
+            gleamRotationY += 90;
+        }
+
+        //dym z bomby
+        yield return new WaitForSeconds(2);
+        GameObject smoke1 = Instantiate(smoke);
+        smoke1.transform.position = bombPos;
+
+
+        yield return new WaitForSeconds(1);
+        var G = GameObject.FindGameObjectsWithTag("gleam");
+        foreach (GameObject item in G)
+        {
+            Destroy(item);
+        }
+        var S = GameObject.FindGameObjectsWithTag("smoke");
+        foreach (GameObject item in S)
+        {
+            Destroy(item);
+        }
+
     }
 }

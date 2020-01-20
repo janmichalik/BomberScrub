@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class map : MonoBehaviour
 {
@@ -87,6 +88,10 @@ public class map : MonoBehaviour
             ortoCamera.enabled = false;
             topCamera.enabled = true;
             perspCamera.enabled = false;
+        }
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
         }
     }
 }
