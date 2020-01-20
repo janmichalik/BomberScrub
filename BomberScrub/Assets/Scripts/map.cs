@@ -33,8 +33,8 @@ public class map : MonoBehaviour
                     GameObject box = Instantiate(crate);
                     box.transform.position = new Vector3(6 * i - 1, (float)1.5, (float)3.9 + 8 * (j - 1));
                     box.transform.localScale -= new Vector3((float)0.2, (float)0.2, (float)0.2);
-                    Renderer rend = box.GetComponent<Renderer>();
-                    rend.material.color = Color.blue;
+                    //Renderer rend = box.GetComponent<Renderer>();
+                    //rend.material.color = Color.blue;
                 }
             }
 
@@ -45,8 +45,8 @@ public class map : MonoBehaviour
                     GameObject box = Instantiate(crate);
                     box.transform.position = new Vector3(6 * i + 2, (float)1.5, (float) 3.9 * j);
                     box.transform.localScale -= new Vector3((float) 0.2, (float)0.2, (float)0.2);
-                    Renderer rend = box.GetComponent<Renderer>();
-                    rend.material.color = Color.blue;
+                    //Renderer rend = box.GetComponent<Renderer>();
+                    //rend.material.color = Color.blue;
                 }
             }
         }
