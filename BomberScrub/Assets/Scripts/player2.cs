@@ -11,6 +11,7 @@ public class player2 : MonoBehaviour
     private Animation anim;
     GameObject bomb, gleam, smoke;
     public Vector3 pos, rotat;
+    public AudioSource explosionSound;
 
     private void Start()
     {
@@ -21,6 +22,7 @@ public class player2 : MonoBehaviour
         bomb = Resources.Load("bomb") as GameObject;
         gleam = Resources.Load("gleam") as GameObject;
         smoke = Resources.Load("smoke") as GameObject;
+        explosionSound = GetComponent<AudioSource>();
     }
     void Awake()
     {
@@ -72,6 +74,7 @@ public class player2 : MonoBehaviour
             Vector3 bombPos = new Vector3(pos.x + addPosx, 1, pos.z + addPosz);
             b2.transform.position = bombPos;
             StartCoroutine(bombExplosion(bombPos));
+            explosionSound.PlayDelayed(6.5f);
             Destroy(b2, 6.5f);
         }
     }
