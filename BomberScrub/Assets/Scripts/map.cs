@@ -9,6 +9,7 @@ public class map : MonoBehaviour
     Camera perspCamera, topCamera, ortoCamera;
     GameObject cam;
     public Camera m_CameraTwo;
+    private AudioSource mainTheme;
 
 
     // Start is called before the first frame update
@@ -18,6 +19,10 @@ public class map : MonoBehaviour
         GameObject crate = Resources.Load("Crate") as GameObject;
         GameObject player1 = Resources.Load("player1") as GameObject;
         GameObject player2 = Resources.Load("player2") as GameObject;
+
+        mainTheme = GetComponent<AudioSource>();
+
+
         for (int i=1; i<17; ++i)
         {
             for(int j=1; j<9; ++j)
@@ -92,6 +97,20 @@ public class map : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+        }
+
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            if (Time.timeScale == 1)
+            {
+                Time.timeScale = 0;
+                mainTheme.Pause();
+            }
+            else if (Time.timeScale == 0)
+            {
+                Time.timeScale = 1;
+                mainTheme.UnPause();
+            }
         }
     }
 }
